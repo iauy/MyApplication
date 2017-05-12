@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         txtInput = (EditText) findViewById(R.id.inputNumber) ;
         editTextGrade = (EditText) findViewById(R.id.editTextGrade) ;
 
-       // txtGrade = (TextView) findViewById(R.id.txtGrade) ;
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
