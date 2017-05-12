@@ -52,7 +52,7 @@ public class ExampleInstrumentedTest {
 //        onView(withId(R.id.inputField)).perform(typeText("HELLO"), closeSoftKeyboard());
         onView(withId(R.id.inputNumber)).perform(typeText(String.valueOf(50)),closeSoftKeyboard());
         onView(withId(R.id.button_cal_grade)).perform(click());
-        onView(withId(R.id.editTextGrade)).check(matches(withText("Your grade = D")));
+        onView(withId(R.id.editTextGrade)).check(matches(withText("Your grade = A")));
 
         onView(withId(R.id.inputNumber)).perform(typeText(String.valueOf(70)),closeSoftKeyboard());
         onView(withId(R.id.button_cal_grade)).perform(click());
