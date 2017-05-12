@@ -38,7 +38,6 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
 //        assertEquals("com.example.auy.myapplication", appContext.getPackageName());
-     //   onView(withId(R.id.inputNumber)).perform(typeText(String.valueOf(50)));
 
     }
 
