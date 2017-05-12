@@ -8,22 +8,39 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    EditText txtInput = null;
+    EditText editTextGrade = null;
+    TextView txtGrade  = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        txtInput = (EditText) findViewById(R.id.inputNumber) ;
+        editTextGrade = (EditText) findViewById(R.id.editTextGrade) ;
 
+       // txtGrade = (TextView) findViewById(R.id.txtGrade) ;
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        final Button button = (Button) findViewById(R.id.button_cal_grade);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                System.out.println("Hello android !!!");
+                onClickCalGrade();
             }
         });
     }
@@ -48,5 +65,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onClickCalGrade(){
+        String inputScore = txtInput.getText().toString();
+        System.out.println("onClickCalGrade android !!!" + inputScore);
+        editTextGrade.setText(String.valueOf(calGrade(Integer.parseInt(inputScore))));
+        return true;
+    }
+
+    private String calGrade(int score){
+        return (score <= 60 )?"Your grade = D":"Your grade = A";
     }
 }
